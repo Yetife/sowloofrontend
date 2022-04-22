@@ -1,42 +1,31 @@
 import React from 'react'
-import {Grid, List, ListItem, ListItemText, Typography, FormControl, OutlinedInput, Button, InputAdornment, Link,
-    InputBase, alpha
-} from '@mui/material'
+import {Grid, Typography, FormControl, Button, InputAdornment, Link, InputBase, alpha } from '@mui/material'
 import {makeStyles} from '@mui/styles'
-import { AddBoxSharp } from '@mui/icons-material'
-import SearchIcon from '@mui/icons-material/Search';
 
 
 const useStyles = makeStyles((theme) =>({
     grid : {
         display: 'flex',
         justifyContent: 'space-evenly',
-        alignItems: 'center',
-        // flexWrap: 'wrap',
         paddingTop: '25px'
         },
     list: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        // alignItems: 'left',
-        // padding: '0',
         textAlign: 'left'
 },
     search: {
         display: "flex",
         alignItems: "center",
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
+        height: '60px',
+        backgroundColor: 'white',
         '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25)
+            backgroundColor: alpha(theme.palette.common.white, 0.25),
+            borderRadius: '16px 0px 16px 0px'
         },
-        // borderRadius: theme.shape.borderRadius,
-        borderRadius: '80%',
-        // width: "40%",
-        // [theme.breakpoints.down('sm')]: {
-        //     display: (props) => (props.open ? "flex" : "none"),
-        //     width: "70%"
-        // }
+        borderRadius: '60px',
+        marginTop: '10px'
     },
     input: {
         color: "white",
@@ -56,46 +45,40 @@ const others = ["Documentation", "FAQS", "Dashboard", "Contact"]
             <Typography variant="h6" noWrap component="div" sx={{color: '#140342', padding: '10px 0'}}>About Us</Typography>
             {infos.map((info, index) => (
                 <Link key={index} href="#" underline="none" sx={{color: '#4F547B', padding: '5px'}}>{info}</Link>
-                ))} 
-        </div>        
+                ))}
+        </div>
 
         <div className={classes.list}>
             <Typography variant="h6" noWrap component="div" sx={{color: '#140342', padding: '10px 0'}}>Categories</Typography>
             {categories.map((category, index) => (
                 <Link key={index} href="#" underline="none" sx={{color: '#4F547B', padding: '5px'}}>{category}</Link>
-                ))} 
+                ))}
         </div>
 
-        <div className={classes.list}>
+        <div className={classes.list} sx={{lineHeight: '1'}}>
             <Typography variant="h6" noWrap component="div" sx={{color: '#140342', padding: '10px 0'}}>Support</Typography>
             {others.map((other, index) => (
                 <Link key={index} href="#" underline="none" sx={{color: '#4F547B', padding: '5px'}}>{other}</Link>
-                ))} 
+                ))}
         </div>
 
         <Grid>
-            <Typography variant="h6" noWrap component="div" sx={{color: '#140342'}}> 
+            <Typography variant="h6" noWrap component="div" sx={{color: '#140342'}}>
                 GET IN TOUCH
             </Typography>
-            <Typography variant="h6" noWrap component="div" sx={{color: '#4F547B'}}>
+            <Typography variant="h6" noWrap component="div" sx={{color: '#4F547B', marginTop: '10px'}}>
                 We don’t send spam so don’t worry.
             </Typography>
-        {/*     <FormControl sx={{ m: 1, width: '70%', borderRadius: '20%', border: 'none', borderColor: 'white', backgroundColor: 'white', margin: '30px 0'}} variant="filled">*/}
-        {/*        <OutlinedInput*/}
-        {/*        id="outlined-adornment-weight"*/}
-        {/*        value="Email..."*/}
-        {/*        endAdornment={<InputAdornment position="end"><Button>Submit</Button></InputAdornment>}*/}
-        {/*        aria-describedby="outlined-weight-helper-text"*/}
-        {/*        inputProps={{*/}
-        {/*        'aria-label': 'weight', "&&:after": {border: "none"}*/}
-        {/*        }} />*/}
-        {/*</FormControl>*/}
-            <div className={classes.search}>
-                <SearchIcon />
-                <InputBase placeholder={"Search..."} className={classes.input}/>
-                {/*<CancelIcon className={classes.cancel} onClick={() => setOpen(false)}/>*/}
-            </div>
-            
+            <FormControl>
+                <InputBase placeholder={"Email..."}
+                           endAdornment={<InputAdornment position="end">
+                               <Button variant="filled" sx={{background: 'blue', color: 'white', borderRadius: '60px', padding: '10px 20px', marginRight: '10px', textTransform: 'capitalize'}}>
+                                   Submit
+                               </Button>
+                           </InputAdornment>}
+                           className={classes.search}/>
+            </FormControl>
+
         </Grid>
     </Grid>
   )

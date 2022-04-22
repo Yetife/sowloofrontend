@@ -1,7 +1,7 @@
-import img1 from "./assets/Group(3).png";
-import img2 from "./assets/Group(4).png";
-import img3 from "./assets/online-learning (3).png";
-import img4 from "./assets/Group(5).png";
+import img1 from "./assets/icon/Group(3).png";
+import img2 from "./assets/icon/Group(4).png";
+import img3 from "./assets/icon/online-learning (3).png";
+import img4 from "./assets/icon/Group(5).png";
 
 export const contents = [
     {

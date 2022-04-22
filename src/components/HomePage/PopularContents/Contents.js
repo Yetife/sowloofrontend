@@ -37,18 +37,17 @@ const Contents = ({content}) => {
                     <Typography variant="body2" component="div" sx={{fontSize: "16px"}}>
                         {content.content.substr(0, 80) + '...'}
                     </Typography>
-                    {/*<Divider mt={"50px"}/>*/}
                 </CardContent>
             </CardActionArea>
-            <CardActions sx={{display: 'flex', justifyContent: 'space-between', textAlign: 'left', color: '#140342'}}>
+            <CardActions sx={{display: 'flex', justifyContent: 'space-between', textAlign: 'left'}}>
                 {/*<div >*/}
-                <Button size="small" sx={{fontSize: '14px'}}>
+                <Button size="small" sx={{fontSize: '16px', color: '#140342', fontWeight: '700', textTransform: 'capitalize'}}>
                   Goal: {content.marketingGoals}
                 </Button>
-                <Button size="small" sx={{fontSize: '14px'}}>
+                <Button size="small" sx={{fontSize: '16px', color: '#140342', fontWeight: '700', textTransform: 'capitalize'}}>
                    Industry: {content.industry}
                 </Button>
-                <Button size="small" sx={{fontSize: '14px'}}>
+                <Button size="small" sx={{fontSize: '16px', color: '#140342', fontWeight: '700', textTransform: 'capitalize'}}>
                     Words: {content.wordCount}
                 </Button>
                 {/*</div>*/}

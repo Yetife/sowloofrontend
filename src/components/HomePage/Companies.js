@@ -1,11 +1,11 @@
 import { Typography, Grid, Divider } from '@mui/material'
 import React from 'react'
-import amazon from '../assets/Group(1).png'
-import cisco from '../assets/Group(2).png'
-import amd from '../assets/amd-logo-1-2.png'
-import dropcam from '../assets/dropcam.png'
-import logitech from '../assets/logitech-2-1-3-1.png'
-import spotify from '../assets/Spotify-2-2.png'
+import amazon from '../../assets/icon/Group(1).png'
+import cisco from '../../assets/icon/Group(2).png'
+import amd from '../../assets/icon/amd-logo-1-2.png'
+import dropcam from '../../assets/icon/dropcam.png'
+import logitech from '../../assets/icon/logitech-2-1-3-1.png'
+import spotify from '../../assets/icon/Spotify-2-2.png'
 import {makeStyles} from '@mui/styles'
 
 

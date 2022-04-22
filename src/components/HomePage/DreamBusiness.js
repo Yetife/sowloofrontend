@@ -2,7 +2,7 @@ import React from 'react';
 import {Grid, Typography} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import Button from "@mui/material/Button";
-import img from '../assets/images-bg(2).png'
+import img from '../../assets/images/images-bg(2).png'
 
 const useStyles = makeStyles(() =>({
     grid : {

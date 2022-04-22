@@ -5,7 +5,7 @@ import Contents from "./Contents";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useTheme} from "@mui/material/styles";
-import {contents} from "../../data";
+import {contents} from "../../../data";
 
 
 const useStyles = makeStyles(() =>({

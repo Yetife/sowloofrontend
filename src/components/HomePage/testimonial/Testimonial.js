@@ -1,8 +1,8 @@
 import React from 'react';
 import {Card, CardContent, IconButton, Typography} from "@mui/material";
 import {makeStyles} from '@mui/styles'
-import img from '../../assets/img.png'
-import StarRating from "../../reusables/StarRating";
+import img from '../../../assets/images/img.png'
+import StarRating from "../../../reusables/StarRating";
 
 const useStyles = makeStyles(() =>({
     card: {

@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import "react-datetime/css/react-datetime.css";
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "@mui/styles";
 import {createTheme} from "@mui/material/styles";
+import {BrowserRouter} from "react-router-dom";
 
 const theme = createTheme();
 ReactDOM.render(
   <React.StrictMode>
       <ThemeProvider theme={theme}>
-          <App />
+          <BrowserRouter>
+              <App />
+          </BrowserRouter>
       </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

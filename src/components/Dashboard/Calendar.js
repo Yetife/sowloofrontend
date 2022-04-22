@@ -1,34 +1,10 @@
-// import React from 'react';
-// import FullCalendar from '@fullcalendar/react' // must go before plugins
-// import dayGridPlugin from '@fullcalendar/daygrid'
-// import Button from "@mui/material/Button";
-// import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-// import {Box} from "@mui/material";
-//
-// const Scheduler = () => {
-//     return (
-//         <Box>
-//             <FullCalendar
-//                 plugins={[ dayGridPlugin ]}
-//                 initialView="dayGridMonth"
-//            />
-//         </Box>
-//     );
-// };
-//
-// export default Scheduler;
-//
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import TableCell from "@mui/material/TableCell";
-import {
-  darken,
-  lighten
-} from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import {darken, lighten} from "@mui/material/styles";
 import {ViewState, EditingState} from "@devexpress/dx-react-scheduler";
 import classNames from "clsx";
-import { Scheduler, MonthView, Appointments, Toolbar, DateNavigator,TodayButton, AppointmentTooltip, AppointmentForm, EditRecurrenceMenu, Resources, DragDropProvider
+import { Scheduler, MonthView, Appointments, Toolbar, DateNavigator,TodayButton, AppointmentTooltip, AppointmentForm, EditRecurrenceMenu, Resources, DragDropProvider, CurrentTimeIndicator
 } from "@devexpress/dx-react-scheduler-material-ui";
 import WbSunny from "@mui/icons-material/WbSunny";
 import FilterDrama from "@mui/icons-material/FilterDrama";
@@ -40,77 +16,78 @@ import {alpha} from "@mui/material";
 import Button from "@mui/material/Button";
 import {useRef, useState} from "react";
 import EventModal from "./EventModal";
+import AddIcon from '@mui/icons-material/Add';
 
 const appointments = [
-  {
-    id: 0,
-    title: "Watercolor Landscape",
-    startDate: new Date(2022, 4, 22, 9, 30),
-    endDate: new Date(2022, 4, 22, 10, 30),
-    ownerId: 1
-  },
-  {
-    id: 1,
-    title: "Monthly Planning",
-    startDate: new Date(2022, 2, 12, 11, 30),
-    endDate: new Date(2022, 2, 12, 12, 30),
-    ownerId: 1
-  },
-  {
-    id: 2,
-    title: "Recruiting students",
-    startDate: new Date(2022, 2, 12, 15, 30),
-    endDate: new Date(2018, 6, 9, 17, 0),
-    ownerId: 2
-  },
-  {
-    id: 3,
-    title: "Oil Painting",
-    startDate: new Date(2018, 6, 18, 14, 30),
-    endDate: new Date(2018, 6, 18, 15, 30),
-    ownerId: 2
-  },
-  {
-    id: 4,
-    title: "Open Day",
-    startDate: new Date(2018, 6, 20, 12, 0),
-    endDate: new Date(2018, 6, 20, 13, 35),
-    ownerId: 6
-  },
-  {
-    id: 5,
-    title: "Watercolor Landscape",
-    startDate: new Date(2018, 6, 6, 13, 0),
-    endDate: new Date(2018, 6, 6, 14, 0),
-    rRule: "FREQ=WEEKLY;BYDAY=FR;UNTIL=20180816",
-    exDate: "20180713T100000Z,20180727T100000Z",
-    ownerId: 2
-  },
-  {
-    id: 6,
-    title: "Meeting of Instructors",
-    startDate: new Date(2018, 5, 28, 12, 0),
-    endDate: new Date(2018, 5, 28, 12, 30),
-    rRule: "FREQ=WEEKLY;BYDAY=TH;UNTIL=20180727",
-    exDate: "20180705T090000Z,20180719T090000Z",
-    ownerId: 5
-  },
-  {
-    id: 7,
-    title: "Oil Painting for Beginners",
-    startDate: new Date(2018, 6, 3, 11, 0),
-    endDate: new Date(2018, 6, 3, 12, 0),
-    rRule: "FREQ=WEEKLY;BYDAY=TU;UNTIL=20180801",
-    exDate: "20180710T080000Z,20180724T080000Z",
-    ownerId: 3
-  },
-  {
-    id: 8,
-    title: "Watercolor Workshop",
-    startDate: new Date(2018, 6, 9, 11, 0),
-    endDate: new Date(2018, 6, 9, 12, 0),
-    ownerId: 3
-  }
+  // {
+  //   id: 0,
+  //   title: "Watercolor Landscape",
+  //   startDate: new Date(2022, 4, 22, 9, 30),
+  //   endDate: new Date(2022, 4, 22, 10, 30),
+  //   ownerId: 1
+  // },
+  // {
+  //   id: 1,
+  //   title: "Monthly Planning",
+  //   startDate: new Date(2022, 2, 12, 11, 30),
+  //   endDate: new Date(2022, 2, 12, 12, 30),
+  //   ownerId: 1
+  // },
+  // {
+  //   id: 2,
+  //   title: "Recruiting students",
+  //   startDate: new Date(2022, 2, 12, 15, 30),
+  //   endDate: new Date(2018, 6, 9, 17, 0),
+  //   ownerId: 2
+  // },
+  // {
+  //   id: 3,
+  //   title: "Oil Painting",
+  //   startDate: new Date(2018, 6, 18, 14, 30),
+  //   endDate: new Date(2018, 6, 18, 15, 30),
+  //   ownerId: 2
+  // },
+  // {
+  //   id: 4,
+  //   title: "Open Day",
+  //   startDate: new Date(2018, 6, 20, 12, 0),
+  //   endDate: new Date(2018, 6, 20, 13, 35),
+  //   ownerId: 6
+  // },
+  // {
+  //   id: 5,
+  //   title: "Watercolor Landscape",
+  //   startDate: new Date(2018, 6, 6, 13, 0),
+  //   endDate: new Date(2018, 6, 6, 14, 0),
+  //   rRule: "FREQ=WEEKLY;BYDAY=FR;UNTIL=20180816",
+  //   exDate: "20180713T100000Z,20180727T100000Z",
+  //   ownerId: 2
+  // },
+  // {
+  //   id: 6,
+  //   title: "Meeting of Instructors",
+  //   startDate: new Date(2018, 5, 28, 12, 0),
+  //   endDate: new Date(2018, 5, 28, 12, 30),
+  //   rRule: "FREQ=WEEKLY;BYDAY=TH;UNTIL=20180727",
+  //   exDate: "20180705T090000Z,20180719T090000Z",
+  //   ownerId: 5
+  // },
+  // {
+  //   id: 7,
+  //   title: "Oil Painting for Beginners",
+  //   startDate: new Date(2018, 6, 3, 11, 0),
+  //   endDate: new Date(2018, 6, 3, 12, 0),
+  //   rRule: "FREQ=WEEKLY;BYDAY=TU;UNTIL=20180801",
+  //   exDate: "20180710T080000Z,20180724T080000Z",
+  //   ownerId: 3
+  // },
+  // {
+  //   id: 8,
+  //   title: "Watercolor Workshop",
+  //   startDate: new Date(2018, 6, 9, 11, 0),
+  //   endDate: new Date(2018, 6, 9, 12, 0),
+  //   ownerId: 3
+  // }
 ];
 
 const resources = [
@@ -321,10 +298,9 @@ const AppointmentContent = withStyles(styles, {
   />
 ));
 
+const Calendar = () => {
 
-const Scheduler = () => {
-
-const [state, setState] = useState({data: appointments})
+const [state, setState] = useState({data: appointments, shadePreviousCells: true})
 const [modalOpen, setModalOpen] = useState(false)
 
     const calendarRef = useRef()
@@ -339,8 +315,11 @@ const [modalOpen, setModalOpen] = useState(false)
             <Toolbar.FlexibleSpace {...restProps} className={classes.flexibleSpace}>
                 <div className={classes.flexContainer}>
                     <MenuIcon fontSize="large" htmlColor="black" />
-                    <Button variant="outlined" style={{ marginLeft: "10px" }} onClick={() => setModalOpen(true)}>
-                        Post
+                    <Button variant="outlined" style={{ marginLeft: "10px", display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} onClick={() => setModalOpen(true)}>
+                        <AddIcon sx={{marginRight: '15px'}}/>
+                        <div>
+                            Post
+                        </div>
                     </Button>
                 </div>
             </Toolbar.FlexibleSpace>
@@ -349,7 +328,7 @@ const [modalOpen, setModalOpen] = useState(false)
 
  function commitChanges({ added, changed, deleted }) {
     setState((state) => {
-      let { data } = state;
+      let { data, shadePreviousCells } = state;
       if (added) {
         const startingAddedId =
           data.length > 0 ? data[data.length - 1].id + 1 : 0;
@@ -368,39 +347,42 @@ const [modalOpen, setModalOpen] = useState(false)
       return { data };
     });
   }
-    const { data } = state;
+    const { data, shadePreviousCells } = state;
 
     return (
       <Paper>
-        <Scheduler data={data}>
-          <EditingState
-              onCommitChanges={commitChanges}
-          />
-          <ViewState defaultCurrentDate={Date.now()} />
+          <div style={{position: 'relative', zIndex: '0'}}>
+                <Scheduler data={data} useRef={calendarRef}>
+                  <EditingState
+                      onCommitChanges={null}
+                  />
+                  <ViewState defaultCurrentDate={Date.now()} />
 
-          <MonthView
-            // timeTableCellComponent={TimeTableCell}
-            dayScaleCellComponent={DayScaleCell}
-          />
-          <Appointments
-            // appointmentComponent={Appointment}
-            // appointmentContentComponent={AppointmentContent}
-          />
-          <Resources data={resources} />
+                  <MonthView
+                    // timeTableCellComponent={TimeTableCell}
+                    dayScaleCellComponent={DayScaleCell}
+                  />
+                  <Appointments
+                    // appointmentComponent={Appointment}
+                    // appointmentContentComponent={AppointmentContent}
+                  />
+                  {/*<Resources data={resources} />*/}
 
-          <Toolbar flexibleSpaceComponent={FlexibleSpace} />
-          <DateNavigator />
-            <TodayButton />
+                  <Toolbar flexibleSpaceComponent={FlexibleSpace} />
+                  <DateNavigator />
+                    <TodayButton />
 
-          <EditRecurrenceMenu />
-          <AppointmentTooltip showCloseButton showDeleteButton showOpenButton />
-          {/*<AppointmentForm />*/}
-          <DragDropProvider />
-        </Scheduler>
-
+                  {/*<EditRecurrenceMenu />*/}
+                  {/*<AppointmentTooltip showCloseButton showDeleteButton showOpenButton />*/}
+                  {/*<AppointmentForm appointmentData={<EventModal/>}/>*/}
+                  <DragDropProvider />
+                    <CurrentTimeIndicator
+                        shadePreviousCells={shadePreviousCells}/>
+                </Scheduler>
+          </div>
         <EventModal isOpen={modalOpen} onClose={() => setModalOpen(false)} onEventAdded={event => onEventAdded(event)}/>
       </Paper>
     );
   // }
 }
-export default Scheduler;
+export default Calendar;

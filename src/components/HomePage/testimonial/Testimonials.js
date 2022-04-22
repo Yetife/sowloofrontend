@@ -7,7 +7,7 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import MobileStepper from "@mui/material/MobileStepper";
 import {useTheme} from "@mui/material/styles";
-import {testimonials} from "../../data";
+import {testimonials} from "../../../data";
 
 const useStyles = makeStyles(() =>({
     container : {

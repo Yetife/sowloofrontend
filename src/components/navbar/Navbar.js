@@ -1,93 +1,54 @@
 import React, {useState} from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Divider from '@mui/material/Divider';
+import {AppBar, Box, Toolbar, Typography, Container, Button, IconButton, MenuItem, Divider} from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
-import { styled } from '@mui/material/styles';
-import group from '../../assets/Group.png'
+import group from '../../assets/icon/Group.png'
+import {Link} from "react-router-dom";
+import {makeStyles} from '@mui/styles'
+
+const useStyles = makeStyles(() =>({
+
+}))
 
 const pages = [
   {
     name: 'Home',
-    icon: KeyboardArrowDownIcon
+    path: ""
   },
   {
-    name: 'Courses',
-    icon: KeyboardArrowDownIcon
+    name: 'Content',
+    path: "content"
   },
   {
     name: 'Events',
-    icon: KeyboardArrowDownIcon
+    path: "events"
   },
   {
     name: 'Blog',
-    icon: KeyboardArrowDownIcon
+    path: "blog"
   },
   {
     name: 'Pages',
-    icon: KeyboardArrowDownIcon
+    path: "pages"
   },
   {
     name: 'Contact',
-    icon: KeyboardArrowDownIcon
+    path: "contact"
   },
 ]
 
 const Navbar = () => {
-  const [open, setOpen] = useState()
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const BootstrapButton = styled(Button)({
-  boxShadow: 'none',
-  textTransform: 'none',
-  fontSize: 16,
-  border: 'none',
-  fontFamily: [
-    'Arial',
-    'sans-serif',
-  ].join(','),
-  '&:hover': {
-    backgroundColor: 'none',
-    borderColor: 'none',
-    boxShadow: 'none',
-    border: 'none',
-    borderRadius: '50%'
-  },
-  '&:active': {
-    boxShadow: 'none',
-    backgroundColor: 'none',
-    borderColor: 'none',
-    border: 'none',
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  },
-});
+  const [open, setOpen] = useState(false)
+  const classes = useStyles()
 
   return (
-    <AppBar position="fixed" sx={{background: "white", color: "black", top: '0rem'}}>
+    <AppBar position="fixed" sx={{background: 'white', color: 'black'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }} >
             SOWLOO
           </Typography>
-          <Divider orientation="vertical" variant="middle" flexItem  style={{ minHeight: "10px", height: '30px', color: "#EDEDED", marginTop: "20px" }}/>
+          <Divider orientation="vertical" variant="middle" flexItem  sx={{ minHeight: "5px", height: '30px', color: "#EDEDED", marginTop: "20px"}}/>
           
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex', fontSize: "15px",  marginLeft: "7px"} }}>
             Explore
@@ -95,24 +56,25 @@ const Navbar = () => {
           <Divider orientation="vertical" variant="middle" flexItem  style={{ minHeight: "10px", height: "30px", color: "#EDEDED", marginTop: "20px" }}/>
 
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'}}}>
+          <Box sx={{flexGrow: 1, display: { xs: 'none', md: 'flex'}}}>
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <BootstrapButton disableRipple endIcon={page.name === "Contact"? null : <page.icon/>} sx={{backgroundColor: "white", color: "black", padding: '2px',   fontSize:"14px", border: "unset"}}>{page.name}</BootstrapButton>
+                <MenuItem key={page}>
+                  <Link to={`/${page.path}`} style={{textDecoration: 'none'}}>
+                    <Button disableRipple endIcon={page.name === "Contact"? null : <KeyboardArrowDownIcon/>} sx={{color: "black", padding: '2px', fontSize:"14px", border: "none", textTransform: 'capitalize'}}>{page.name}</Button>
+                  </Link>
                 </MenuItem>
               ))} 
           </Box>
           <Box sx={{ flexGrow: 0 , display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'space-between' }}>
-              {/* <img src={group}/> */}
              <IconButton size="large" aria-label="search" color="inherit">
-            <SearchIcon sx={{padding: '3px'}}/>
-          </IconButton>
+                  <SearchIcon sx={{padding: '3px'}} onClick={() => setOpen(true)}/>
+             </IconButton>
            <Divider orientation="vertical" variant="middle" flexItem  style={{ minHeight: "30px", color: "gray", marginTop: "15px"}}/>
           <img src={group} style={{padding: '0 23px'}}/>
           <Divider orientation="vertical" variant="middle" flexItem  style={{ minHeight: "30px", color: "gray", marginTop: "15px"}}/>
-          
+
             <Typography noWrap sx={{padding: '0 15px'}}>Log in</Typography>
-            <Typography sx={{ border: 'none', background: '#6440FB', borderRadius: '60px', padding: '10px 20px', fontWeight: 'bold', color: 'black' }}>Sign Up</Typography>
+            <Button variant="filled" sx={{ border: 'none', background: '#dedbf3', borderRadius: '60px', padding: '10px 30px', fontWeight: 'bold', color: '#6440FB', textTransform: 'capitalize'}}>Sign Up</Button>
           </Box>
         </Toolbar>
       </Container>

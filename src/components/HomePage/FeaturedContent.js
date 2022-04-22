@@ -2,7 +2,7 @@ import React from 'react'
 import {Grid, Typography, Button, Card} from '@mui/material'
 import {makeStyles} from '@mui/styles'
 import Contents from "./PopularContents/Contents";
-import arrow from '../assets/arrow.png'
+import arrow from '../../assets/images/arrow.png'
 
 const useStyles = makeStyles(() =>({
     grid : {
