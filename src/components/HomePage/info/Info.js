@@ -9,7 +9,6 @@ const useStyles = makeStyles(() =>({
     container: {
         height: '100%',
         backgroundColor: '#EEF2F6',
-        // position: 'absolute',
         marginTop: '36.5%'
         },
     }))

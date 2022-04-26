@@ -1,9 +1,5 @@
 import React from 'react'
 import {Typography} from '@mui/material'
-import img1 from '../../assets/icon/Group(3).png'
-import img2 from '../../assets/icon/Group(4).png'
-import img3 from '../../assets/icon/online-learning (3).png'
-import img4 from '../../assets/icon/Group(5).png'
 import {learnings} from "../../data";
 
 const Learning = () => {

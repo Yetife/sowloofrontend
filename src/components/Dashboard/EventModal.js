@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) =>({
         right: 20
     },
     container: {
-        width: "500px !important",
+        width: "1500px !important",
         height: "550px",
         backgroundColor: "white",
         position: "absolute",
@@ -89,11 +89,6 @@ const EventModal = ({isOpen, onClose, onEventAdded}) => {
     };
     return (
         <>
-            {/*<Tooltip title="Add" aria-label="add" onClick={()=> setOpen(true)}>*/}
-            {/*    <Fab color="primary" className={classes.fab}>*/}
-            {/*        <AddIcon />*/}
-            {/*    </Fab>*/}
-            {/*</Tooltip>*/}
             <Modal open={isOpen} onClose={onClose}>
                 <Container className={classes.container}>
                     <form className={classes.form} autoComplete={"off"} onSubmit={onSubmit}>
@@ -111,12 +106,6 @@ const EventModal = ({isOpen, onClose, onEventAdded}) => {
                     </form>
                 </Container>
             </Modal>
-            <Snackbar open={openAlert} autoHideDuration={3000} onClose={handleClose} anchorOrigin={{vertical: 'bottom',
-                horizontal: 'left',}}>
-                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                    This is a success message!
-                </Alert>
-            </Snackbar>
         </>
     );
     // );

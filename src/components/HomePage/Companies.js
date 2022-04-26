@@ -16,8 +16,6 @@ const useStyles = makeStyles(() =>({
         alignItems: 'center',
         flexWrap: 'wrap',
         margin: '0 20px',
-        // width: '50%',   
-        // marginLeft: '100px'
         },
     }))
 

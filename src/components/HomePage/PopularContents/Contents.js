@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, Typography} from "@mui/material";
-import Divider from "@mui/material/Divider";
 import {makeStyles} from "@mui/styles";
 import Button from "@mui/material/Button";
 
@@ -13,7 +12,6 @@ const useStyles = makeStyles(() =>({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // flexWrap: 'wrap',
         margin: '15px',
     },
     content : {
@@ -40,7 +38,6 @@ const Contents = ({content}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions sx={{display: 'flex', justifyContent: 'space-between', textAlign: 'left'}}>
-                {/*<div >*/}
                 <Button size="small" sx={{fontSize: '16px', color: '#140342', fontWeight: '700', textTransform: 'capitalize'}}>
                   Goal: {content.marketingGoals}
                 </Button>
@@ -50,7 +47,6 @@ const Contents = ({content}) => {
                 <Button size="small" sx={{fontSize: '16px', color: '#140342', fontWeight: '700', textTransform: 'capitalize'}}>
                     Words: {content.wordCount}
                 </Button>
-                {/*</div>*/}
             </CardActions>
         </Card>
     );

@@ -150,15 +150,6 @@ const styles = (theme) => ({
             padding: "0.5em",
             textAlign: "center"
           },
-          sun: {
-            color: "#FFEE58"
-          },
-          cloud: {
-            color: "#90A4AE"
-          },
-          rain: {
-            color: "#4FC3F7"
-          },
           sunBack: {
             backgroundColor: "#FFFDE7"
           },
@@ -231,19 +222,6 @@ const styles = (theme) => ({
             paddingBottom: theme.spacing(1.5)
           }
 });
-
-const WeatherIcon = ({ classes, id }) => {
-  switch (id) {
-    case 0:
-      return <Opacity className={classes.rain} fontSize="large" />;
-    case 1:
-      return <WbSunny className={classes.sun} fontSize="large" />;
-    case 2:
-      return <FilterDrama className={classes.cloud} fontSize="large" />;
-    default:
-      return null;
-  }
-};
 
 // #FOLD_BLOCK
 const CellBase = React.memo(

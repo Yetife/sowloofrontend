@@ -17,7 +17,6 @@ const useStyles = makeStyles(() =>({
         position: 'absolute',
         display: 'flex',
         justifyContent: 'center',
-        // alignItems: 'center',
         },
 
     card : {
@@ -61,7 +60,6 @@ const useStyles = makeStyles(() =>({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        // position: 'absolute',
         top: '0px',
         bottom: '0',
         left: '150px',
@@ -92,7 +90,6 @@ const PopularContent = () => {
     };
 
     return (
-    // <div style={{backgroundColor: '#EEF2F6', height: '300px',  margin: '100px 0px', width: '100%',  position: 'absolute',}}>
       <div className={classes.container}>
         <div style={{paddingTop: '50px', textAlign: 'center', marginLeft: '30%'}}>
             <Typography variant="h5" noWrap component="div" sx={{color: '#140342'}}>
