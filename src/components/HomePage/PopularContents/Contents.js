@@ -32,8 +32,9 @@ const Contents = ({content}) => {
         <Card className={classes.card}>
             <CardActionArea>
                 <CardContent >
-                    <Typography variant="body2" component="div" sx={{fontSize: "16px"}}>
-                        {content.content.substr(0, 80) + '...'}
+                    <Typography variant="body2" component="div" sx={{fontSize: "16px"}}>	
+                   	 {content.content.length > 80 ? `${content.content.substring(0, 70)}...` : content.content}
+                        {/*{content.content.substr(0, 80) + '...'}*/}
                     </Typography>
                 </CardContent>
             </CardActionArea>

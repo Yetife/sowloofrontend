@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) =>({
         right: 20
     },
     container: {
-        width: "1500px !important",
-        height: "550px",
+        width: "3000px !important",
+        height: "700px",
         backgroundColor: "white",
         position: "absolute",
         top: 0,

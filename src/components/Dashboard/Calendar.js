@@ -105,12 +105,7 @@ const getBorder = (theme) =>
       : darken(alpha(theme.palette.divider, 1), 0.68)
   }`;
 
-const DayScaleCell = (props) => (
-  <MonthView.DayScaleCell
-    {...props}
-    style={{ textAlign: "center", fontWeight: "bold" }}
-  />
-);
+
 
 const styles = (theme) => ({
           cell: {
@@ -242,9 +237,6 @@ const CellBase = React.memo(
         tabIndex={0}
         className={classNames({
           [classes.cell]: true,
-          // [classes.rainBack]: iconId === 0,
-          // [classes.sunBack]: iconId === 1,
-          // [classes.cloudBack]: iconId === 2,
           [classes.opacity]: otherMonth
         })}
       >
@@ -267,9 +259,7 @@ const Appointment = withStyles(styles, {
   <Appointments.Appointment {...restProps} className={classes.appointment} />
 ));
 
-const AppointmentContent = withStyles(styles, {
-  name: "AppointmentContent"
-})(({ classes, ...restProps }) => (
+const AppointmentContent = withStyles(styles, {name: "AppointmentContent"})(({ classes, ...restProps }) => (
   <Appointments.AppointmentContent
     {...restProps}
     className={classes.apptContent}
@@ -287,6 +277,14 @@ const [modalOpen, setModalOpen] = useState(false)
         let calendarApi = calendarRef.current.getApi()
         calendarApi.addEvent(event);
     }
+
+    const DayScaleCell = (props) => (
+        <MonthView.DayScaleCell
+            {...props}
+            style={{ textAlign: "center", fontWeight: "bold" }}
+            onClick={() => setModalOpen(true)}
+        />
+    );
 
     const FlexibleSpace = withStyles(styles, { name: "ToolbarRoot" })(
         ({ classes, ...restProps }) => (
@@ -332,7 +330,7 @@ const [modalOpen, setModalOpen] = useState(false)
           <div style={{position: 'relative', zIndex: '0'}}>
                 <Scheduler data={data} useRef={calendarRef}>
                   <EditingState
-                      onCommitChanges={null}
+                      onCommitChanges={commitChanges}
                   />
                   <ViewState defaultCurrentDate={Date.now()} />
 

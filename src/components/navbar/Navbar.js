@@ -73,7 +73,7 @@ const Navbar = () => {
           <img src={group} style={{padding: '0 23px'}}/>
           <Divider orientation="vertical" variant="middle" flexItem  style={{ minHeight: "30px", color: "gray", marginTop: "15px"}}/>
 
-            <Typography noWrap sx={{padding: '0 15px'}}>Log in</Typography>
+            <Typography noWrap sx={{padding: '0 15px', cursor: "pointer"}}>Log in</Typography>
             <Button variant="filled" sx={{ border: 'none', background: '#dedbf3', borderRadius: '60px', padding: '10px 30px', fontWeight: 'bold', color: '#6440FB', textTransform: 'capitalize'}}>Sign Up</Button>
           </Box>
         </Toolbar>
