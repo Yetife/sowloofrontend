@@ -4,12 +4,14 @@ import Sidebar from "../components/Dashboard/Sidebar";
 import Calendar from "../components/Dashboard/Calendar";
 import {Routes, Route} from 'react-router-dom'
 import { Outlet } from "react-router-dom";
+import MiniDrawer from "../components/Dashboard/MiniDrawer";
 const Dashboard = () => {
     return (
         <div>
             <Grid container>
                 <Grid item sm={2} xs={2}>
-                    <Sidebar/>
+                    {/*<Sidebar/>*/}
+                    <MiniDrawer/>
                 </Grid>
                 <Grid item sm={9.5} xs={10} sx={{marginTop: '80px'}}>
                     {/*<Routes>*/}

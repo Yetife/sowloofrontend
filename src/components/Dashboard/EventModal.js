@@ -60,22 +60,22 @@ const EventModal = ({isOpen, onClose, onEventAdded}) => {
     }
 
     // return (
-        // <Modal isOpen={isOpen} onCloseRequestClose={onClose}>
-        //     <form onSubmit={onSubmit}>
-        //         <input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
-        //
-        //         <div>
-        //             <label>Start Date</label>
-        //             <Datetime value={start} onChange={date => setStart(date)} />
-        //         </div>
-        //
-        //         <div>
-        //             <label>End Date</label>
-        //             <Datetime value={end} onChange={date => setEnd(date)}/>
-        //         </div>
-        //         <button>Save</button>
-        //     </form>
-        // </Modal>
+    // <Modal isOpen={isOpen} onCloseRequestClose={onClose}>
+    //     <form onSubmit={onSubmit}>
+    //         <input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
+    //
+    //         <div>
+    //             <label>Start Date</label>
+    //             <Datetime value={start} onChange={date => setStart(date)} />
+    //         </div>
+    //
+    //         <div>
+    //             <label>End Date</label>
+    //             <Datetime value={end} onChange={date => setEnd(date)}/>
+    //         </div>
+    //         <button>Save</button>
+    //     </form>
+    // </Modal>
     const [open, setOpen] = useState(false)
     const [openAlert, setOpenAlert] = useState(false)
     const classes = useStyles();
@@ -95,13 +95,13 @@ const EventModal = ({isOpen, onClose, onEventAdded}) => {
                         <input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
                         <div>
                             <label>Start Date</label>
-                             <Datetime value={start} onChange={date => setStart(date)} />
-                      </div>
-                        <div>
-                        <label>End Date</label>
-                        <Datetime value={end} onChange={date => setEnd(date)}/>
+                            <Datetime value={start} onChange={date => setStart(date)} />
                         </div>
-                          <Button variant={"outlined"}>Save</Button>
+                        <div>
+                            <label>End Date</label>
+                            <Datetime value={end} onChange={date => setEnd(date)}/>
+                        </div>
+                        <Button variant={"outlined"}>Save</Button>
 
                     </form>
                 </Container>

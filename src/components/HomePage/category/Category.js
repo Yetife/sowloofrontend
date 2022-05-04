@@ -6,7 +6,7 @@ import {makeStyles} from '@mui/styles'
 const useStyles = makeStyles(() =>({
     card : {
         width: '20%',
-        height: '10%',
+        height: '8%',
         display: 'flex',
         flexWrap: 'nowrap',
         margin: '15px'
