@@ -103,6 +103,7 @@ const PopularContent = () => {
               <ArrowBackIcon />
           </div>
 
+          <Grid  columns={{ xs: 4, sm: 8, md: 12 }}></Grid>
         <div className={classes.card}>
             {contents.map((content, index) =>(
                 <Contents key={index} content={content} />

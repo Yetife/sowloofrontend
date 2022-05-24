@@ -6,9 +6,6 @@ import {ViewState, EditingState} from "@devexpress/dx-react-scheduler";
 import classNames from "clsx";
 import { Scheduler, MonthView, Appointments, Toolbar, DateNavigator,TodayButton, AppointmentTooltip, AppointmentForm, EditRecurrenceMenu, Resources, DragDropProvider, CurrentTimeIndicator
 } from "@devexpress/dx-react-scheduler-material-ui";
-import WbSunny from "@mui/icons-material/WbSunny";
-import FilterDrama from "@mui/icons-material/FilterDrama";
-import Opacity from "@mui/icons-material/Opacity";
 import MenuIcon from "@mui/icons-material/Menu";
 import { withStyles } from "@mui/styles";
 import { owners } from './task'
@@ -138,14 +135,6 @@ const styles = (theme) => ({
             outline: 0
         }
     },
-    content: {
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        alignItems: "center"
-    },
     text: {
         padding: "0.5em",
         textAlign: "center"
@@ -242,15 +231,9 @@ const CellBase = React.memo(
                 tabIndex={0}
                 className={classNames({
                     [classes.cell]: true,
-                    // [classes.rainBack]: iconId === 0,
-                    // [classes.sunBack]: iconId === 1,
-                    // [classes.cloudBack]: iconId === 2,
                     [classes.opacity]: otherMonth
                 })}
             >
-                <div className={classes.content}>
-                    {/*<WeatherIcon classes={classes} id={iconId} />*/}
-                </div>
                 <div className={classes.text}>
                     {formatDate(startDate, formatOptions)}
                 </div>
@@ -332,7 +315,7 @@ const Calendar = () => {
             <div style={{position: 'relative', zIndex: '0'}}>
                 <Scheduler data={data} useRef={calendarRef}>
                     <EditingState
-                        onCommitChanges={null}
+                        onCommitChanges={commitChanges}
                     />
                     <ViewState defaultCurrentDate={Date.now()} />
 
@@ -350,9 +333,9 @@ const Calendar = () => {
                     <DateNavigator />
                     <TodayButton />
 
-                    {/*<EditRecurrenceMenu />*/}
-                    {/*<AppointmentTooltip showCloseButton showDeleteButton showOpenButton />*/}
-                    {/*<AppointmentForm appointmentData={<EventModal/>}/>*/}
+                    <EditRecurrenceMenu />
+                    <AppointmentTooltip showCloseButton showDeleteButton showOpenButton />
+                    <AppointmentForm appointmentData={<EventModal/>} />
                     <DragDropProvider />
                     <CurrentTimeIndicator
                         shadePreviousCells={shadePreviousCells}/>

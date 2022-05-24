@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box, Typography, Link, TextField, Stack, Button } from '@mui/material';
-import BackgroundPicture from '../assets/images/LoginImageFolder/BackgroundPicture.svg';
+// import BackgroundPicture from '../assets/images/LoginImageFolder/BackgroundPicture.svg';
 import { useFormik } from 'formik';
 
 function Register() {
@@ -28,7 +28,7 @@ function Register() {
         <Grid container lg={12} height="100vh" width="100vw">
             <Grid item lg={5} backgroundColor="#140342">
                 <Grid container justifyContent="center" alignItems="center">
-                    <img src={BackgroundPicture} alt="backgroundPicture" />
+                    {/*<img src={BackgroundPicture} alt="backgroundPicture" />*/}
                 </Grid>
             </Grid>
             <Grid item lg={7}>

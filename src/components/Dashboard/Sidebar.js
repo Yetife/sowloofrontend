@@ -73,7 +73,6 @@ const useStyles = makeStyles((theme) =>({
 }))
 const Sidebar = () => {
     const classes = useStyles();
-
     const navigate = useNavigate()
 
     return (

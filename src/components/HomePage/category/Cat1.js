@@ -183,7 +183,6 @@ function Cat1() {
                 </Typography>
             </Grid>
             <Grid container spacing={2} className={classes.stackrow}>
-
                 {
                     categories.map(category =>
                         (

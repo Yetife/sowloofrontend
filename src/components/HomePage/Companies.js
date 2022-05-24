@@ -10,7 +10,7 @@ import {makeStyles} from '@mui/styles'
 import {Box, Card, CardContent, InputBase} from "@material-ui/core";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
-import img from "../../assets/images/Group39.svg";
+// import img from "../../assets/images/Group39.svg";
 
 
 const useStyles = makeStyles((theme) =>({

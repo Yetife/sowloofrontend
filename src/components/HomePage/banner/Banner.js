@@ -1,7 +1,7 @@
 // import { makeStyles } from '@mui/styles';
 import {Box, Button, Grid, IconButton, InputBase, makeStyles, Typography} from "@material-ui/core";
 import SearchIcon from '@mui/icons-material/Search';
-import img from "../../../assets/images/Group39.svg"
+// import img from "../../../assets/images/Group39.svg"
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import React from "react";
@@ -198,7 +198,7 @@ function Banner() {
                     </Typography>
                 </Grid>
                 <Grid item sm={6} xs={12} alignItems="center" className={classes.rightsection}>
-                    <Box component="img" src={img} className={classes.image}/>
+                    {/*<Box component="img" src={img} className={classes.image}/>*/}
                     {/*<Image src={img} width="50%" object-fit="contain"/>*/}
                 </Grid>
             </Grid>
